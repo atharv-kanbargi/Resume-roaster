@@ -15,7 +15,7 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 // Enable CORS for all routes
 console.log("cors ", process.env.CORS_ORIGIN);
-app.use(cors({ origin: process.env.CORS_ORIGIN }));
+app.use(cors({ origin: "http://localhost:3000", credentials: true , methods: ["*"] }));
 
 async function generateRoast(resumeData) {
   try {
